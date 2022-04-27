@@ -7,7 +7,7 @@ from cli import templates
 import logic
 import visualizations as vis
 
-# TODO: import modules as "import x as _x"
+# TODO: import modules as "import x as _x"  
 # TODO: Organise modules' functions and variables
 def main():
     '''
