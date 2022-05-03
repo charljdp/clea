@@ -2,6 +2,11 @@
 ## Introduction
 A command line application that assists in simplifying, evaluating and visualising logical expressions for software developers.
 
+![Usage](./documentation/app_screenshot.png "App usage")
+
+Rendered expression tree:
+![](./documentation/expr_tree.png "Expression tree")
+
 ## Installation
 ```
 git clone git@github.com:charljdp/clea.git

@@ -26,7 +26,7 @@ def reset():
 
 # -----------------------------------------------------------
 
-env = os.environ['ENV'].lower()
+env = os.environ.get('ENV', 'prod').lower()
 
 # Directory of the config file
 if env == 'prod':
