@@ -4,44 +4,72 @@ All output templates are here.
 
 ABOUT = f"""
 #{'-'*100}#
-#|#{' '*38}A B O U T    C L E A{' '*38}#|#
+#|#{' '*39}A B O U T    C L E A{' '*39}#|#
 #{'-'*100}#
-Command-line Logic Expression Assessor (CLEA) assists you in reasoning about logical expressions or 
-formulas. The operators that are supported are:
-    
+Command-line Logic Expression Assessor (CLEA) assists you in reasoning about (Boolean) logical expressions or 
+formulas.
+    Examples: 
+      A & B & (C | D)
+      X ^ (Y & ~Z)
+
+The operators that are supported are:
+
     &: and
     |: or
     ^: exclusive-or
     ~: not
+    
+Variable assignment:
 
+    <variable_name> = <logic expression>
+    
+    The variable assignment is equivalent to a definition assignment. 
+    It holds the unevaluated logic expression.
+
+    Variable names may only contain letters, numbers and underscores but may not start with a number.
+
+Uasge:
+
+    1  | A = X & Y & (X ^ Z)
+    2  | cnf A
+
+         X & Y & (X | Z) & (~X | ~Z)
+    
+    3  | table ~X | ~Z
+    
+        Z  X | F
+        --------
+        0  0 | 1
+        0  1 | 1
+        1  0 | 1
+        1  1 | 0
 """
 
 
 HELP = f"""
-    #{'-'*52}#
-    #|#   CLEA (Command-line Logic Expression Assessor   #|#
-    #{'-'*52}#
+    Each command consists of an operation and one or two logical expressions 
+    depending on the operation.
 
-    operation logic_expression
-    operation is one of,
-        anf    - Algebraic Normal Form
-        cnf    - Conjunctive Normal Form
-        dnf    - Disjunctive Normal Form
-        nnf    - Negation Normal Form
-        nf     - All normal forms
-        sim    - Simplify expression
-        sum    - Summary of expression. Includes
-        ei     - Eliminate implications
-        all    - Do everything
-        tree   - Draw an expression tree
-        table  - Draw a truth table
-        models - If the expression is satisfiable, a list of models is printed.
+    Operations with the syntax: <operation> <expression>
+        anf     Algebraic Normal Form
+        cnf     Conjunctive Normal Form
+        dnf     Disjunctive Normal Form
+        nnf     Negation Normal Form
+        nf      All normal forms
+        sim     Simplify expression
+        sum     Summary of expression
+        ei      Eliminate implications
+        tree    Draw an expression tree
+        table   Draw a truth table
+        models  If the expression is satisfiable, a list of models is printed.
+    
+    Operations with the syntax: <operation> <expression_1>, <expression_2>
+        map     Computes a mapping between the atoms of expression_1 and expression_2, 
+                if there is such a mapping.
 
-    map logic_expression1, logic_expression2
-        Computes a mapping between the atoms of logic_expression1 and logic_expression2, if there is such a mapping.
-
-    help    - Prints help
-    exit    - Exit the application
+    Other commands:
+        help    Prints help
+        exit    Exit the application
 """
 
 def normal_forms(normal_form_dict: dict) -> str:
