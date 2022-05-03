@@ -1,6 +1,6 @@
 # CLEA (Command-line Logic Expression Assessor)
 ## Introduction
-A command line application that assists in simplifying, evaluating and visualising loigcal expressions for software developers. You can view the ongoing development process [here](https://cjduplessis.notion.site/Logician-Development-2380621b62534c5491a0f1a60282f342).
+A command line application that assists in simplifying, evaluating and visualising logical expressions for software developers.
 
 ## Installation
 ```

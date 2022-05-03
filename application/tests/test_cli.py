@@ -49,10 +49,10 @@ def test_prints(monkeypatch, capsys):
         cli = CLI()
         cli.prints('abc', context='normal')
         printed = capsys.readouterr().out
-        assert '|' in printed
+        assert ':' in printed
         cli.prints('abc', context='normal', margined=False)
         printed = capsys.readouterr().out
-        assert '|' not in printed
+        assert ':' not in printed
 
 
 @pytest.mark.cli

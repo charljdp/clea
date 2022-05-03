@@ -47,8 +47,11 @@ class CLI:
                 self.prints(str(e))
 
     def _input(self, prompt):
-        print(prompt, end="")
-        return input()
+        try:
+            print(prompt, end="")
+            return input()
+        finally:
+            print()
 
     def prints(
         self, 
@@ -62,7 +65,8 @@ class CLI:
                 context: str (default: 'normal') 
                     possible values: 'normal', 'help' and 'error'
         '''
-        margin = {'text': "", 'frame': "#|#"} if margined else {}
+        # breakpoint()
+        margin = {'text': "", 'frame': "#:#"} if margined else {}
         styled_text = self._Style.apply(
             margin=margin,
             text=text, 
